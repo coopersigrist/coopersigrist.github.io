@@ -61,7 +61,7 @@ WORKDIR /srv/jekyll
 
 # install jekyll and dependencies
 RUN gem install --no-document jekyll bundler
-RUN bundle install --no-cache
+RUN bundle install --no-cache --verbose
 
 EXPOSE 8080
 
