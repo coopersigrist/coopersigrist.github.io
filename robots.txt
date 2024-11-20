@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://coopersigrist.github.io/al-folio/sitemap.xml
+Sitemap: https://coopersigrist.github.io/sitemap.xml
