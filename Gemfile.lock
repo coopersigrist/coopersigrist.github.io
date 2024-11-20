@@ -252,6 +252,7 @@ DEPENDENCIES
   classifier-reborn
   css_parser
   feedjira
+  finishing_moves
   httparty
   jekyll
   jekyll-archives
@@ -272,7 +273,7 @@ DEPENDENCIES
   jemoji
   unicode_utils
   webrick
-  finishing_moves
+  
 
 BUNDLED WITH
    2.5.18
