@@ -61,7 +61,6 @@ GEM
     ffi (1.17.0-x86_64-darwin)
     ffi (1.17.0-x86_64-linux-gnu)
     ffi (1.17.0-x86_64-linux-musl)
-    finishing_moves (1.2.1)
     forwardable-extended (2.6.0)
     gemoji (4.1.0)
     google-protobuf (4.28.2)
@@ -252,7 +251,6 @@ DEPENDENCIES
   classifier-reborn
   css_parser
   feedjira
-  finishing_moves
   httparty
   jekyll
   jekyll-archives
