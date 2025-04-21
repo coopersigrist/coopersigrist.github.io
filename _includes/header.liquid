@@ -81,11 +81,15 @@
               {% endif %}
             </a>
           </li>
+
           {% assign cv_page = site.pages | where: "permalink", "/cv/" | first %}
           {% if cv_page and cv_page.cv_pdf %}
             <li class="nav-item">
-              <a class="nav-link" href="{{ '/assets/pdf/' | append: cv_page.cv_pdf | relative_url }}" target="_blank" download>
+              <a class="nav-link" href="#" onclick="downloadCV('{{ '/assets/pdf/' | append: cv_page.cv_pdf | relative_url }}'); return false;">
                 CV
+                <script>
+                  function downloadCV(pdfUrl) { window.open(pdfUrl, '_blank'); }
+                </script>
               </a>
             </li>
           {% endif %}

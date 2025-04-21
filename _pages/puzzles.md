@@ -3,6 +3,8 @@ layout: page
 title: "Puzzles"
 permalink: /puzzles/
 ---
+  TEST
+
 
   You are given some vases, each with a color and a shape. If you have at least one pair with a different color and at least one pair with a different shape do you necessarily have a pair of vases which have a different color and different shape?
 
