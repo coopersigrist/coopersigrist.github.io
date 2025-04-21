@@ -65,18 +65,18 @@
               {% endif %}
             </a>
           </li>
-          <li class="nav-item {% if page.permalink == '/projects/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/projects/' | relative_url }}">
-              Projects
-              {% if page.permalink == '/projects/' %}
-                <span class="sr-only">(current)</span>
-              {% endif %}
-            </a>
-          </li>
           <li class="nav-item {% if page.permalink == '/teaching/' %}active{% endif %}">
             <a class="nav-link" href="{{ '/teaching/' | relative_url }}">
               Teaching
               {% if page.permalink == '/teaching/' %}
+                <span class="sr-only">(current)</span>
+              {% endif %}
+            </a>
+          </li>
+          <li class="nav-item {% if page.permalink == '/puzzles/' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/puzzles/' | relative_url }}">
+              Puzzles
+              {% if page.permalink == '/puzzles/' %}
                 <span class="sr-only">(current)</span>
               {% endif %}
             </a>
