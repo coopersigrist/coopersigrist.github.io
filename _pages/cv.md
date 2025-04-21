@@ -5,7 +5,7 @@ title: cv
 nav: true
 nav_order: 5
 cv_pdf: Cooper_CV_teaching_.pdf
-description: My CV
+description:
 toc:
   sidebar: left
 ---
