@@ -13,8 +13,8 @@ profile:
 news: false # includes a list of news items
 selected_papers:
   true:  # includes a list of papers marked as "selected={true}"
-    - paper: 9207452
-    - paper: 10533805
+    - paper: Spiking
+    - paper: Polyomino
 
 social: false # includes social icons at the bottom of the page
 ---
