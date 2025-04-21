@@ -14,7 +14,11 @@ profile:
     <p>Your City, State 12345</p>
 
 news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers:
+  true:  # includes a list of papers marked as "selected={true}"
+    - paper: 9207452
+    - paper: 10533805
+
 social: true # includes social icons at the bottom of the page
 ---
 
