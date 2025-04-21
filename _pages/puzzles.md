@@ -1,13 +1,7 @@
 ---
 title: "Puzzles"
 permalink: /puzzles/
-layout: default
 ---
-
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
 
   You are given some vases, each with a color and a shape. If you have at least one pair with a different color and at least one pair with a different shape do you necessarily have a pair of vases which have a different color and different shape?
 
@@ -21,4 +15,3 @@ layout: default
 
     The other option is vase 1 and vase 3 have the same shape and vase 1 and vase 4 have the same shape, which implies that vase 3 and vase 4 have the same shape, which is a contradiction.
   </details>
-</div>
