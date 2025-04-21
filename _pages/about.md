@@ -14,8 +14,8 @@ news: false # includes a list of news items
 selected_papers:
   true:  # includes a list of papers marked as "selected={true}"
     - paper: Spiking
-    - paper: Polyomino
-
+    - paper: Solar-Siting
+    - paper: Learning-to-Site
 social: false # includes social icons at the bottom of the page
 ---
 
