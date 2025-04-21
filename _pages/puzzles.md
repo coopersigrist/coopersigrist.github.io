@@ -1,4 +1,5 @@
 ---
+layout: puzzles
 title: "Puzzles"
 permalink: /puzzles/
 ---

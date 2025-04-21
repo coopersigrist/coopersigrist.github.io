@@ -1,0 +1,23 @@
+liquid
+---
+layout: default
+---
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if page.title %}
+        {{ page.title }}
+      {% else %}
+        Puzzles
+      {% endif %}
+    </h1>
+    {% if page.subtitle %}
+      <p class="desc">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+
+  <article>
+    {{ content }}
+  </article>
+</div>
