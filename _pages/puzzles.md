@@ -1,5 +1,5 @@
 ---
-layout: puzzles
+layout: page
 title: "Puzzles"
 permalink: /puzzles/
 ---
