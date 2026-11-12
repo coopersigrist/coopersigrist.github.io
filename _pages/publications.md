@@ -1,15 +1,11 @@
 ---
 layout: page
 permalink: /publications/
-title: Publications
-description: Publications listed in reverse chronological order.
+title: Research
+description: Published work, listed in reverse chronological order.
 nav: true
 nav_order: 2
 ---
-
-<!-- _pages/publications.md -->
-
-<!-- Bibsearch Feature -->
 
 {% include bib_search.liquid %}
 

@@ -1,6 +1,6 @@
 <header>
   <!-- Nav Bar -->
-  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
+  <nav id="navbar" class="navbar navbar-light navbar-expand-lg {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
       {% if page.permalink != '/' %}
         <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
@@ -42,8 +42,8 @@
 
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
-          {% for page in site.pages %}
-            {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
+          {% for nav_page in site.pages %}
+            {% if nav_page.permalink == '/' %} {% assign about_title = nav_page.title %} {% endif %}
           {% endfor %}
 
           <!-- About -->
@@ -56,19 +56,34 @@
             </a>
           </li>
 
-           <!-- Other pages -->
+          <li class="nav-item {% if page.permalink == '/teaching/' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/teaching/' | relative_url }}">
+              Teaching
+              {% if page.permalink == '/teaching/' %}
+                <span class="sr-only">(current)</span>
+              {% endif %}
+            </a>
+          </li>
           <li class="nav-item {% if page.permalink == '/publications/' %}active{% endif %}">
             <a class="nav-link" href="{{ '/publications/' | relative_url }}">
-              Publications
+              Research
               {% if page.permalink == '/publications/' %}
                 <span class="sr-only">(current)</span>
               {% endif %}
             </a>
           </li>
-          <li class="nav-item {% if page.permalink == '/teaching/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/teaching/' | relative_url }}">
-              Teaching
-              {% if page.permalink == '/teaching/' %}
+          <li class="nav-item {% if page.permalink == '/cv/' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/cv/' | relative_url }}">
+              CV
+              {% if page.permalink == '/cv/' %}
+                <span class="sr-only">(current)</span>
+              {% endif %}
+            </a>
+          </li>
+          <li class="nav-item {% if page.permalink == '/games/' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/games/' | relative_url }}">
+              Games
+              {% if page.permalink == '/games/' %}
                 <span class="sr-only">(current)</span>
               {% endif %}
             </a>
@@ -81,18 +96,56 @@
               {% endif %}
             </a>
           </li>
-
-          {% assign cv_page = site.pages | where: "permalink", "/cv/" | first %}
-          {% if cv_page and cv_page.cv_pdf %}
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="downloadCV('{{ '/assets/pdf/' | append: cv_page.cv_pdf | relative_url }}'); return false;">
-                CV
-                <script>
-                  function downloadCV(pdfUrl) { window.open(pdfUrl, '_blank'); }
-                </script>
-              </a>
-            </li>
-          {% endif %}
+          <li class="nav-item {% if page.permalink == '/resources/' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/resources/' | relative_url }}">
+              Resources
+              {% if page.permalink == '/resources/' %}
+                <span class="sr-only">(current)</span>
+              {% endif %}
+            </a>
+          </li>
+          <li class="nav-item fx-toggle-item">
+            <button
+              type="button"
+              id="fx-toggle"
+              class="fx-toggle"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="fx-menu"
+              title="Cursor effects"
+            >
+              <svg class="fx-popper" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M1.8 14.2c1.8-0.2 4.6-0.8 6.7-2.6 0.4-0.3 1.1-0.1 1.2 0.5 0.4 1.8 0.3 4.6-0.6 7.3-0.2 0.5-0.8 0.7-1.2 0.4C5.6 18.2 3.1 16.4 1.8 14.2Z"></path>
+                <path d="M8.4 12.4 L3.4 20.2" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round"></path>
+                <path d="M9.6 11.1 C12.2 7.4 16.6 5.2 21.2 5.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+                <path d="M9.8 10.4 C13.4 8.8 16.8 9.8 20.2 12.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                <path d="M10.4 11.6 C13.1 11.2 16.2 13.1 18.6 16.2" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"></path>
+                <circle cx="13.2" cy="6.2" r="1.05"></circle>
+                <circle cx="16.8" cy="4.6" r="0.95"></circle>
+                <circle cx="20.4" cy="6.8" r="1.15"></circle>
+                <circle cx="18.8" cy="9.6" r="0.8"></circle>
+                <circle cx="14.6" cy="9.1" r="0.7"></circle>
+                <rect x="12.1" y="4.2" width="1.5" height="1.5" transform="rotate(22 12.85 4.95)"></rect>
+                <rect x="19.3" y="8.4" width="1.35" height="1.35" transform="rotate(38 19.97 9.07)"></rect>
+                <rect x="15.4" y="7.2" width="1.2" height="1.2" transform="rotate(-18 16 7.8)"></rect>
+              </svg>
+              <span class="sr-only">Cursor effects</span>
+            </button>
+            <div id="fx-menu" class="fx-menu" hidden>
+              <p class="fx-menu-title">Mouse effects</p>
+              <p class="fx-menu-hint">Mix and match. They stack.</p>
+              <label><input type="checkbox" data-fx="sparkles"> Sparkle trail</label>
+              <label><input type="checkbox" data-fx="confetti"> Confetti burst</label>
+              <label><input type="checkbox" data-fx="comet"> Rainbow comet</label>
+              <label><input type="checkbox" data-fx="fireflies"> Firefly lanterns</label>
+              <label><input type="checkbox" data-fx="bubbles"> Soap bubbles</label>
+              <label><input type="checkbox" data-fx="orbit"> Orbiting moons</label>
+              <label><input type="checkbox" data-fx="glyphs"> Falling glyphs</label>
+              <label><input type="checkbox" data-fx="pixels"> 8-bit crumbs</label>
+              <label><input type="checkbox" data-fx="aurora"> Aurora ribbon</label>
+              <button type="button" id="fx-clear" class="fx-clear">Clear all</button>
+            </div>
+          </li>
           {% if site.search_enabled %}
             <!-- Search -->
             <li class="nav-item">
@@ -102,7 +155,7 @@
             </li>
           {% endif %}
           {% if site.enable_darkmode %}
-            <!-- Toogle theme mode -->
+            <!-- Toggle theme mode -->
             <li class="toggle-container">
               <button id="light-toggle" title="Change theme">
                 <i class="ti ti-sun-moon" id="light-toggle-system"></i>

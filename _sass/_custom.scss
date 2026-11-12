@@ -1,0 +1,377 @@
+/******************************************************************************
+ * Site-specific layout and widgets
+ ******************************************************************************/
+
+.container {
+  max-width: $max-content-width;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.navbar .nav-link {
+  padding-left: 0.55rem !important;
+  padding-right: 0.55rem !important;
+  white-space: nowrap;
+}
+
+.home-nav-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin: 2.25rem 0 0.5rem;
+  max-width: none;
+  clear: both;
+}
+
+.home-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.4rem;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--global-theme-color);
+  border-radius: 0.55rem;
+  color: var(--global-theme-color);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none !important;
+  background: transparent;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.home-nav-btn:hover {
+  background: var(--global-theme-color);
+  color: var(--global-bg-color);
+  transform: translateY(-1px);
+}
+
+.home-nav-btn-wide {
+  grid-column: 1 / -1;
+}
+
+.cv-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 0.5rem;
+}
+
+.cv-action-btn {
+  min-height: 2.5rem;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
+.cv-doc {
+  max-width: 52rem;
+}
+
+.cv-doc-head {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.cv-name {
+  margin: 0 0 0.35rem;
+  font-size: 1.85rem;
+  font-weight: 700;
+}
+
+.cv-contact {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.cv-section {
+  margin-bottom: 1.4rem;
+}
+
+.cv-section h3 {
+  margin: 0 0 0.55rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--global-divider-color);
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.cv-section h4 {
+  margin: 0.9rem 0 0.4rem;
+  font-size: 1rem;
+}
+
+.cv-entry {
+  margin-bottom: 0.7rem;
+}
+
+.cv-entry-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.cv-dates {
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+.cv-note {
+  margin: 0.2rem 0 0.3rem;
+}
+
+.cv-doc ul {
+  margin: 0.25rem 0 0.15rem 1.1rem;
+}
+
+.cv-pubs {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.cv-pubs li {
+  margin-bottom: 0.45rem;
+}
+
+.game-nav-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.game-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 14rem;
+  padding: 1.1rem 1.2rem;
+  border-radius: 0.7rem;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  text-decoration: none !important;
+  box-shadow: inset 0 -70px 60px rgba(0, 0, 0, 0.55);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
+  box-shadow: inset 0 -80px 70px rgba(0, 0, 0, 0.62);
+}
+
+.game-card-label {
+  color: #fff;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
+}
+
+@media print {
+  .navbar,
+  .cv-toolbar,
+  .no-print,
+  #fx-layer,
+  #progress,
+  #back-to-top {
+    display: none !important;
+  }
+
+  body {
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .cv-doc {
+    max-width: none;
+  }
+}
+
+.publications ol.bibliography li .preview {
+  width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+  background: var(--global-bg-color);
+}
+
+.publications ol.bibliography li .abbr img.preview,
+.publications ol.bibliography li .abbr .preview {
+  width: 100%;
+  height: auto;
+  max-height: 240px;
+}
+
+#photon-game {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.5rem;
+  background: #0b1020;
+  cursor: none;
+}
+
+.game-status {
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+.game-reset {
+  display: inline-flex;
+  min-height: 2.6rem;
+  min-width: 8rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.fx-toggle-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fx-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  margin: 0 0.15rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--global-text-color);
+  cursor: pointer;
+}
+
+.fx-toggle:hover,
+.fx-toggle[aria-expanded="true"] {
+  color: var(--global-theme-color);
+}
+
+.fx-popper {
+  width: 1.7rem;
+  height: 1.7rem;
+  overflow: visible;
+}
+
+.fx-popper path,
+.fx-popper circle,
+.fx-popper rect {
+  fill: currentColor;
+}
+
+.fx-popper path[fill="none"] {
+  fill: none;
+  stroke: currentColor;
+}
+
+.fx-menu {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  z-index: 1050;
+  min-width: 13.5rem;
+  padding: 0.75rem 0.85rem 0.7rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.6rem;
+  background: var(--global-bg-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  text-align: left;
+}
+
+.fx-menu-title {
+  margin: 0 0 0.15rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.fx-menu-hint {
+  margin: 0 0 0.55rem;
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+.fx-menu label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.28rem;
+  font-size: 0.88rem;
+  color: var(--global-text-color);
+  cursor: pointer;
+}
+
+.fx-menu input {
+  margin: 0;
+}
+
+.fx-clear {
+  width: 100%;
+  margin-top: 0.45rem;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.35rem;
+  background: transparent;
+  color: var(--global-text-color);
+  cursor: pointer;
+}
+
+.fx-clear:hover {
+  border-color: var(--global-theme-color);
+  color: var(--global-theme-color);
+}
+
+#fx-layer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2000;
+}
+
+@media (max-width: 575.98px) {
+  .home-nav-grid,
+  .game-nav-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .home-nav-btn {
+    min-height: 3rem;
+  }
+
+  .game-card {
+    min-height: 11rem;
+  }
+
+  .cv-entry-top {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+}

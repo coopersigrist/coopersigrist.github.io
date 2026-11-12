@@ -1,27 +1,16 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {{ page.title }}
-    </h1>
-    {% if page.description %}
-      <p class="post-description">{{ page.description }}</p>
-    {% endif %}
+<div class="post cv-page">
+  <header class="post-header cv-toolbar no-print">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="cv-actions">
+      <a class="home-nav-btn cv-action-btn" href="{{ 'assets/pdf/Cooper_CV.pdf' | relative_url }}" download="Cooper_Sigrist_CV.pdf">Download PDF</a>
+      <button type="button" class="home-nav-btn cv-action-btn" onclick="window.print()">Print / Save as PDF</button>
+    </p>
   </header>
 
   <article>
-    <div class="embed-responsive embed-responsive-16by9">
-      <object
-        data="{{ 'assets/pdf/Cooper_CV_teaching_.pdf' | relative_url }}"
-        type="application/pdf"
-        class="embed-responsive-item"
-        style="width: 100%; height: 100%; min-height: 500px;"
-      >
-        <p>It appears your browser does not support PDFs.
-          <a href="{{ 'assets/pdf/Cooper_CV_teaching_.pdf' | relative_url }}">Click here to download the PDF</a>.</p>
-      </object>
-    </div>
+    {% include cv_content.liquid %}
   </article>
 </div>
