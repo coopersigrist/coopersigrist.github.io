@@ -5,7 +5,7 @@ title: Solo
 nav: false
 ---
 
-<p class="no-print"><a class="home-nav-btn game-reset" href="{{ '/games/' | relative_url }}">All games</a></p>
+{% include games_back.liquid %}
 
 **Solo** is a trick-taking card game for 4–6 players using a 32-card deck (7–Ace). There is no single winner: the last player to reach 26 points is the loser. Hands are bid, then played with trump, partners, and “going through.”
 

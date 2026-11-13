@@ -5,8 +5,18 @@ layout: default
   <header class="post-header cv-toolbar no-print">
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="cv-actions">
-      <a class="home-nav-btn cv-action-btn" href="{{ 'assets/pdf/Cooper_CV.pdf' | relative_url }}" download="Cooper_Sigrist_CV.pdf">Download PDF</a>
-      <button type="button" class="home-nav-btn cv-action-btn" onclick="window.print()">Print / Save as PDF</button>
+      <a
+        class="cv-icon-btn"
+        href="{{ 'assets/pdf/Cooper_CV.pdf' | relative_url }}"
+        download="Cooper_Sigrist_CV.pdf"
+        title="Download PDF"
+        aria-label="Download PDF"
+      >
+        <i class="fa-solid fa-download" aria-hidden="true"></i>
+      </a>
+      <button type="button" class="cv-icon-btn" onclick="window.print()" title="Print" aria-label="Print">
+        <i class="fa-solid fa-print" aria-hidden="true"></i>
+      </button>
     </p>
   </header>
 
