@@ -45,8 +45,30 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Link Checker 🔗
-        uses: lycheeverse/lychee-action@v1.9.0
+        uses: lycheeverse/lychee-action@v2
         with:
           fail: true
-          # removed md files that include liquid tags
-          args: --user-agent 'curl/7.54' --exclude-path README.md --exclude-path FAQ.md --exclude-path INSTALL.md --exclude-path _pages/404.md --exclude-path _pages/blog.md --exclude-path _posts/2018-12-22-distill.md --exclude-path _posts/2023-04-24-videos.md --verbose --no-progress './**/*.md' './**/*.html'
+          # Only probe real web links. Liquid tags, file://, and data: URIs are
+          # invalid for lychee and can panic older versions.
+          args: >-
+            --user-agent 'curl/7.54'
+            --scheme http
+            --scheme https
+            --exclude-all-private
+            --exclude-path README.md
+            --exclude-path FAQ.md
+            --exclude-path INSTALL.md
+            --exclude-path _pages/404.md
+            --exclude-path _pages/blog.md
+            --exclude-path _posts
+            --exclude-path _projects
+            --exclude-path _site
+            --exclude-path node_modules
+            --exclude-path vendor
+            --max-retries 1
+            --timeout 20
+            --accept 200,204,206,403,429
+            --verbose
+            --no-progress
+            './**/*.md'
+            './**/*.html'

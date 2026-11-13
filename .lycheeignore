@@ -1,0 +1,16 @@
+# Invalid / non-network URLs that make lychee crash or fail the job
+^file:
+^data:
+localhost
+127\.0\.0\.1
+0\.0\.0\.0
+\{\{
+%7B%7B
+# Sites that block CI user-agents with 401/403
+unsplash\.com
+twitter\.com
+x\.com
+stackoverflow\.com
+intmath\.com
+dl\.acm\.org
+doi\.org
