@@ -1,16 +1,6 @@
 (() => {
   const STORAGE_KEY = "cursor-effects";
-  const EFFECT_IDS = [
-    "sparkles",
-    "confetti",
-    "comet",
-    "fireflies",
-    "bubbles",
-    "orbit",
-    "glyphs",
-    "pixels",
-    "aurora",
-  ];
+  const EFFECT_IDS = ["sparkles", "confetti", "comet", "fireflies", "bubbles", "orbit", "glyphs", "pixels", "aurora"];
   const GLYPHS = ["∑", "π", "λ", "∞", "∆", "∫", "μ", "Ω", "γ", "θ"];
 
   const state = {

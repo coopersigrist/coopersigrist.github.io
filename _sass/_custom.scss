@@ -43,7 +43,10 @@
   letter-spacing: 0.01em;
   text-decoration: none !important;
   background: transparent;
-  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
 }
 
 .home-nav-btn:hover {
@@ -194,7 +197,9 @@ body:has(.cv-page) > .container[role="main"] {
   overflow: hidden;
   text-decoration: none !important;
   box-shadow: inset 0 -70px 60px rgba(0, 0, 0, 0.55);
-  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease;
 }
 
 .game-card:hover {
